@@ -35,7 +35,8 @@ def handle_docs_audio(message):
 
         # send audio as voice message
         bot.send_voice(message.chat.id, data)
-    except:
+    except Exception as e:
+        print(e)
         bot.send_message(message.chat.id, "Ошибка обработки аудио")
         
 bot.infinity_polling()
