@@ -36,6 +36,7 @@ def handle_docs_audio(message):
         # send audio as voice message
         bot.send_voice(message.chat.id, data)
     except Exception as e:
+        # log error if convert was failed
         print(e)
         bot.send_message(message.chat.id, "Ошибка обработки аудио")
         
